@@ -23,12 +23,6 @@
 
     }
 
-    // ItemHolder::add_item(item *){
-
-    //     ItemHolder.items.push_back(item *);   
-    // }
-
-
 
 
 

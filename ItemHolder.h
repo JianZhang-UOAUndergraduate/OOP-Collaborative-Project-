@@ -11,13 +11,14 @@ using std::vector;
 
 
 class ItemHolder{
+private:
+    int Max_item;
+
 public:
     ItemHolder(); 
     std::string Holder_name;
-    int Max_item;
     vector<Item*> items;
     ItemHolder(std::string holder_name, int max_Item); 
-
     
 
     // void add_item(item*);

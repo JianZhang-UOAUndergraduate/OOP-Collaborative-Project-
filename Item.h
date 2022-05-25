@@ -4,17 +4,29 @@
 
 #include <iostream>
 #include <string>
+//#include "Player.h"
+#include "Enemy.h"
+
 
 class Item{
-public:
-    Item();
+private:
     std::string item_name;
     int price;
     int level_needed;
+public:
+    Item();
     Item(std::string item_name, int price, int level_needed); 
-    virtual void print() {};
-    
-    ~Item();
+
+    std::string get_item_name();
+    int get_price();
+    int get_level_needed();
+
+    virtual void print() = 0 ;  
+    virtual void use(Enemy* e) = 0;
+
+    //~Item();
+
+    virtual ~Item();
 
 };
 
