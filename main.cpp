@@ -5,7 +5,9 @@
 #include "Item.h"
 #include "ItemHolder.h"
 #include "Weapon.cpp"
-#include "Class.h"
+#include "Player.h"
+#include "Enemy.h"
+#include "Character.h"
 #include "System.h"
 
 using namespace std;
@@ -17,11 +19,18 @@ int main(){
     System *temp_system;
     temp_system = new System("Dessert", 0);
     
-    bool on_off; //start or end game
-    std::cout << "Start game? 1: to start, 0: to end." << std::endl;
-    std::cin >> on_off;
+    string on_off; //start or end game
+    cout << "Start game? 1: to start, 0: to end." << endl;
+    cin >> on_off;
     
-    if (on_off == 1) {
+    //wrong input
+    while (on_off != "1" && on_off != "0") {
+        cout << "Error! Try again: " << endl;
+        cin >> on_off;
+    }
+    
+    //create system object - start game
+    if (on_off == "1") {
         temp_system->Scenario();
     } 
 
@@ -41,6 +50,18 @@ int main(){
     //cout << e->get_name() << endl;
 
     return 0; 
-
-    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
